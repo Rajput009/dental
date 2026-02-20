@@ -7,49 +7,49 @@ function About() {
       content: (
         <div>
           <h4 className="text-xl md:text-2xl font-serif text-slate-900 dark:text-white mb-2">
-            The George Agle House is built
+            A historic residence on North Main
           </h4>
           <p className="text-slate-600 dark:text-slate-300 text-sm md:text-base leading-relaxed">
-            The historic North Main residence became a neighborhood landmark and a quiet witness to Bloomington’s growth.
+            The house at 914 North Main was built circa 1898 as a residence for George Agle, a local business owner.
           </p>
         </div>
       ),
     },
     {
-      title: '1983',
+      title: '1900s',
       content: (
         <div>
           <h4 className="text-xl md:text-2xl font-serif text-slate-900 dark:text-white mb-2">
-            A careful dental remodel
+            A community landmark evolves
           </h4>
           <p className="text-slate-600 dark:text-slate-300 text-sm md:text-base leading-relaxed">
-            Dr. David and Dr. Scott Hume restored the home into a dental practice with deep respect for its architecture and neighborhood roots.
+            The home later served as a sorority house for Illinois Wesleyan University and then a funeral home for several decades.
           </p>
         </div>
       ),
     },
     {
-      title: '1998',
+      title: '1983–1984',
       content: (
         <div>
           <h4 className="text-xl md:text-2xl font-serif text-slate-900 dark:text-white mb-2">
-            A new generation joins
+            Remodeled into a dental office
           </h4>
           <p className="text-slate-600 dark:text-slate-300 text-sm md:text-base leading-relaxed">
-            Dr. Jonathan L. Hume joins the practice, bringing advanced scientific training and a patient-first philosophy grounded in conservative care.
+            The building was remodeled into a dental office for Dr. David J. Hume and Dr. D. Scott Hume.
           </p>
         </div>
       ),
     },
     {
-      title: 'Today',
+      title: '2003',
       content: (
         <div>
           <h4 className="text-xl md:text-2xl font-serif text-slate-900 dark:text-white mb-2">
-            Your dental home on North Main
+            Facade restored to its roots
           </h4>
           <p className="text-slate-600 dark:text-slate-300 text-sm md:text-base leading-relaxed">
-            A stable, familiar team focused on right-sized dentistry, evidence-based treatment, and long-term oral health.
+            A front facade remodel mirrored original columns and porch details from the home’s early history.
           </p>
         </div>
       ),
@@ -68,26 +68,26 @@ function About() {
               A tradition of professional care on North Main
             </h2>
             <p className="text-slate-600 text-lg leading-relaxed mb-6">
-              Conservative, family-oriented care led by Dr. Jonathan L. Hume, D.D.S. You’ll feel known, listened to, and cared for.
+              Gentle, family-oriented care led by Dr. Jonathan L. Hume, D.D.S. Our office combines modern technology with a warm, personal experience.
             </p>
 
             <div className="space-y-3">
               <div className="bg-white rounded-2xl border border-slate-200 p-5 shadow-sm">
-                <h3 className="text-lg font-semibold text-slate-900 mb-1">Integrity-first dentistry</h3>
+                <h3 className="text-lg font-semibold text-slate-900 mb-1">Modern, safe care</h3>
                 <p className="text-sm text-slate-600">
-                  Clear diagnostics and right-sized plans.
+                  State‑of‑the‑art equipment, advanced sterilization, and distilled water for dental units.
                 </p>
               </div>
               <div className="bg-white rounded-2xl border border-slate-200 p-5 shadow-sm">
-                <h3 className="text-lg font-semibold text-slate-900 mb-1">Academic expertise</h3>
+                <h3 className="text-lg font-semibold text-slate-900 mb-1">Comprehensive dentistry</h3>
                 <p className="text-sm text-slate-600">
-                  ISU anatomy master’s + U of I doctorate.
+                  General and cosmetic care, plus coordination with specialists in periodontics, implants, and endodontics.
                 </p>
               </div>
               <div className="bg-white rounded-2xl border border-slate-200 p-5 shadow-sm">
-                <h3 className="text-lg font-semibold text-slate-900 mb-1">A stable, familiar team</h3>
+                <h3 className="text-lg font-semibold text-slate-900 mb-1">Friendly, consistent team</h3>
                 <p className="text-sm text-slate-600">
-                  Familiar faces, year after year.
+                  A kind, caring staff focused on comfort and quality care for every visit.
                 </p>
               </div>
             </div>
@@ -112,7 +112,7 @@ function About() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="rounded-3xl overflow-hidden shadow-soft border border-slate-200 bg-white">
                 <img
-                  src="https://images.unsplash.com/photo-1606813909355-d3039ad8a2d0?q=80&w=1200&auto=format&fit=crop"
+                  src="https://images.unsplash.com/photo-1501183638710-841dd1904471?q=80&w=1200&auto=format&fit=crop"
                   alt="Historic home exterior similar to the North Main landmark"
                   className="w-full h-64 object-cover"
                 />
@@ -136,7 +136,7 @@ function About() {
 
             <Timeline
               title="The Hume Legacy"
-              subtitle="Historic roots, modern care, decades of trust."
+              subtitle="A historic home, a modern practice, and a long-standing commitment to Bloomington families."
               data={timelineData}
             />
           </div>
@@ -146,18 +146,20 @@ function About() {
           <div className="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm">
             <h3 className="text-2xl font-serif text-slate-900 mb-3">Meet the team</h3>
             <ul className="mt-3 text-sm text-slate-600 space-y-2">
-              <li>Dr. Jonathan Hume: McLean County Dental Society past president</li>
-              <li>Sandra: 40+ years of chairside excellence</li>
-              <li>Danyielle, Kerry, Lori: long-term patient care</li>
+              <li>Dr. Jonathan L. Hume, D.D.S.</li>
+              <li>Sandra — Dental Assistant</li>
+              <li>Danyielle — Front Office</li>
+              <li>Kerry — Dental Hygienist</li>
+              <li>Nicole — Dental Hygienist (Adjunct)</li>
             </ul>
           </div>
           <div className="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm">
-            <h3 className="text-2xl font-serif text-slate-900 mb-3">Conservative by design</h3>
+            <h3 className="text-2xl font-serif text-slate-900 mb-3">Office & insurance</h3>
             <p className="text-slate-600 text-sm leading-relaxed">
-              Preserve natural tooth structure. Durable, evidence-based restorations.
+              We accept most insurance plans and major payment methods. PPO and indemnity plans are welcome.
             </p>
             <div className="mt-3 text-sm text-slate-600">
-              Independent distilled water systems for added hygiene.
+              Payment plans are available through a third party.
             </div>
           </div>
         </div>

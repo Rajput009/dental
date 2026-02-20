@@ -67,7 +67,7 @@ function Hero() {
 
       {/* Hero Heading */}
       <h1 className="relative text-5xl md:text-7xl lg:text-8xl font-medium leading-tight max-w-5xl mx-auto mb-10 text-gray-900 z-10">
-        Your dr
+        Your dream
         <span className="inline-flex items-center justify-center align-middle mx-1">
           <img
             alt="Diverse beaming smile of a mature man"
@@ -75,7 +75,7 @@ function Hero() {
             src="https://lh3.googleusercontent.com/aida-public/AB6AXuBsRVNozNKW8qK0Y1wJ4LKSjx4_FswXL90H62VDjx9V-2nTOx_IS3BBKmvNRtmHrOoNnulZvKomTm6bP8QWNnUAFFH8LnjMQBXSrQJCcwV34wppghYs4mzkj8J5gjbo_FgXq8x2shXTyvf11nE2V-Zaj5QzaZoYRzjUPOtZSBnJmp1BKBRKuTgo43NeETj-Ik1uDZ46i28VC-Ez2V9E4NN3u8LIXDJKOBD5ul7D5RwtEznlrS1KupQLCbTkoy0Ov6JNgljne4sV0eQ"
           />
         </span>
-        am smile <br/>
+            smile <br/>
         is{' '}
         <span className="relative inline-block">
           our

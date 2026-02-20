@@ -61,15 +61,15 @@ function Footer() {
             <ul className="space-y-2 text-sm text-gray-400">
               <li className="flex items-center gap-2">
                 <span className="material-symbols-outlined text-[18px]">location_on</span>
-                San Francisco, CA
+                914 North Main, Bloomington, IL
               </li>
               <li className="flex items-center gap-2">
                 <span className="material-symbols-outlined text-[18px]">call</span>
-                (415) 555-0123
+                (309) 828-1395
               </li>
               <li className="flex items-center gap-2">
                 <span className="material-symbols-outlined text-[18px]">mail</span>
-                info@humedental.com
+                drhumeonline@gmail.com
               </li>
             </ul>
           </div>

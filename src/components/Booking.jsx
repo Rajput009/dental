@@ -2,16 +2,19 @@ import { useState } from 'react'
 import { ArrowUpRight } from 'lucide-react'
 
 const services = [
-  { id: 'cleaning', name: 'General Cleaning', description: 'Routine check-up and cleaning.', duration: '60 mins', icon: 'cleaning_services' },
-  { id: 'whitening', name: 'Whitening', description: 'Professional teeth whitening.', duration: '45 mins', icon: 'medical_services' },
-  { id: 'emergency', name: 'Emergency', description: 'Urgent pain relief or repair.', duration: '30 mins', icon: 'emergency' },
-  { id: 'consultation', name: 'Consultation', description: 'Discuss braces or implants.', duration: '30 mins', icon: 'orthopedics' },
+  { id: 'general', name: 'General Dentistry', description: 'Exams, cleanings, and preventive care.', duration: '60 mins', icon: 'cleaning_services' },
+  { id: 'cosmetic', name: 'Cosmetic Dentistry', description: 'Veneers, bonding, and smile enhancement.', duration: '60 mins', icon: 'auto_fix_high' },
+  { id: 'crowns', name: 'Crowns & Bridges', description: 'Restore strength and function.', duration: '60 mins', icon: 'dentistry' },
+  { id: 'root-canal', name: 'Root Canal Therapy', description: 'Relieve pain and save the tooth.', duration: '60 mins', icon: 'medical_services' },
+  { id: 'whitening', name: 'Teeth Whitening', description: 'Professional in-office whitening.', duration: '45 mins', icon: 'light_mode' },
 ]
 
 const dentists = [
-  { id: 'sarah', name: 'Dr. Sarah', title: 'General Dentist', image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAl5_PgkS7ehlquy6N40kMiifCJl3TaykhpMFqc5yi1g4TsWetpr2xWD6f9TmhVokmq6tvm2I8kbwwbursCD9yD99mAc4DenA5qVACuo_-vFKrqhTSvDgJ6yC0xqkyQYgGvzeU2pvRTUq71Z765YKzxN3W2KsQTwAQw6BBGH1-xn4KYIqZhdYEJPXL7XZZPrpvA3XIgEb74UlaXg0rRoT1cXihN0UhtHq1uEn2cyeqHL2kA5lEJSTB846yX68W3kVqS5NoZoX7QRvE' },
-  { id: 'james', name: 'Dr. James', title: 'Oral Surgeon', image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAMJWM9UYaYcK679r6niAE8K7tA488onyBCTZyMia0DrfYSOpF62uAYmf3XGIHFwkTIkBcoEYvoUPoRTjLGtdp53U9xrY9rb9Vq5FKd9qLoj31mmVrHY2aY2vDf56ZB7UMlbAgihhXydpkOib31p5jw34Y4-X1glxx8--1shnw1heTlw4cArhm-Ec4NUfU_C2YDbYEoy-eAEuaC3_jL_D65laK1ngZb2Ndzopqr_L4QcEne29vhSVCmCbycv90uRVX48h3eTS1NCow' },
-  { id: 'elena', name: 'Dr. Elena', title: 'Pediatric', image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDYumEx2J_YbpLWsDA9KrcRGrJiFDwrqQN0wEtgt_Y6w__QdLhmN5rcwslDvq_aY5QrOogCKbKUSXyPV7m1GYnzHLjeircvntEL4oDV00oX_9U7eTSujlfb3zlV3OgXyOwTS9GK8c1Dg1swaGNrPEWk9PnPNl7dEo6NUSvKSL3f7sP29Wse_6Wf-nFGLH-cLuROeZ2VkVc1qPyQobiyarXsCQBV5ld4dxrm_0rPNPe4RI-plOgmJb-bVXQMHxzsAktteUe0epnZYcw' },
+  { id: 'hume', name: 'Dr. Jonathan Hume', title: 'D.D.S.', image: null },
+  { id: 'sandra', name: 'Sandra', title: 'Dental Assistant', image: 'https://www.drjhume.com/images/sandra.jpg' },
+  { id: 'danyielle', name: 'Danyielle', title: 'Front Office', image: 'https://www.drjhume.com/images/danielle.jpg' },
+  { id: 'kerry', name: 'Kerry', title: 'Dental Hygienist', image: 'https://www.drjhume.com/images/kerry_fixed.jpg' },
+  { id: 'nicole', name: 'Nicole', title: 'Adjunct Hygienist', image: null },
   { id: 'any', name: 'Any Available', title: 'Fastest', image: null },
 ]
 

@@ -4,43 +4,43 @@ import { ArrowRight, ArrowLeft } from 'lucide-react'
 const specialists = [
   {
     id: 1,
-    name: 'Dr. David Wilson',
-    specialty: 'Orthodontist',
-    description: 'Specialist in root canal treatments, combining precision and comfort.',
-    practicingSince: '2014',
+    name: 'Dr. Jonathan L. Hume, D.D.S.',
+    specialty: 'General & Cosmetic Dentistry',
+    description: 'Comprehensive care focused on comfort, prevention, and long-term oral health.',
+    background: 'D.D.S., University of Illinois (1998)',
     image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBF8n40U_lCsicr91vtEFh5K9sx33bKS-szyrpWoWKmuCOQ5Gzc5uZ_-LeVko8GQ68Yl0SSbBrHpG5k4187oUjj8pK0TsqmiNgnsbTfztlljhKL8rB_eXXKjP5Wa7_G826-8wuG58D4IgOXM6XL_Y2lYgNryNZ1UKg1DUCBFC_8eU9I9p3gyCDheofPr_zNnCbSf9m1z-f1QICsbXwK0FlqhBuiXap4BxIPlC7YvOh8jU9IZmEEX6DPM2bIidH5QI8rzd8UuCk5CkE',
   },
   {
     id: 2,
-    name: 'Dr. Emma Robinson',
-    specialty: 'Esthetician',
-    description: 'Crafts aesthetic transformations with veneers and cosmetic care.',
-    practicingSince: '2016',
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDqjN3e81T-oF2fFfNg67yP12OV5Nw4tJgCIr4G_2ihmskDgi-LYxL_1ia9s2QiUF36fzVTQKFo7hKycFCLXhA9tiy5yKexAKMFzblbxK7tVT7i1aF90wEXugTMHEFAXFD56N_xXRloHkIA5kz-c5_OpKGDcHcip6JQo-7npMOO9k7wEn_r9Vq8oCCqfzQyc3GtgwtgntL9bZaqHqIkKq_JpXcOwgD4u1z2xmqpsBEnl_uGAQam_X66Tw8KLpLc_OeuJGoctxWHqwc',
+    name: 'Sandra',
+    specialty: 'Dental Assistant',
+    description: 'Experienced chairside support focused on patient comfort and efficiency.',
+    background: 'Dental Assistant',
+    image: 'https://www.drjhume.com/images/sandra.jpg',
   },
   {
     id: 3,
-    name: 'Dr. Sophia Turner',
-    specialty: 'Endodontist',
-    description: 'Specialist in root canal treatments combining precision and comfort.',
-    practicingSince: '2012',
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDC6oNJZlpNHTudSd9sHUR2Y74QozuHiFJ3s4Z9ngJSTfuFV2RSa_4600ipc2kgjWmcLfnmWsmfyYJrMeSl4EQdELUsqy3DPgHM1MYjN-szj43BzdxnS6E-6Gye6SYNtGSYyvc__mvl2GpuzReFPPBTy1Z_ha3dovGBzhhq9xGLF4_bwgMf26oMqbUfc_fxrHeVg71yFPffb8bwcmh8d73vLgx74SvuQ53kphmjGIlB8adsw7E1cxM8aoF3tZnNQpscawLfIXecv9w',
+    name: 'Danyielle',
+    specialty: 'Front Office',
+    description: 'Scheduling, insurance, and patient coordination with a friendly touch.',
+    background: 'Front Office',
+    image: 'https://www.drjhume.com/images/danielle.jpg',
   },
   {
     id: 4,
-    name: 'Dr. Michael Chen',
-    specialty: 'Periodontist',
-    description: 'Expert in gum health and periodontal disease treatment.',
-    practicingSince: '2015',
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBF8n40U_lCsicr91vtEFh5K9sx33bKS-szyrpWoWKmuCOQ5Gzc5uZ_-LeVko8GQ68Yl0SSbBrHpG5k4187oUjj8pK0TsqmiNgnsbTfztlljhKL8rB_eXXKjP5Wa7_G826-8wuG58D4IgOXM6XL_Y2lYgNryNZ1UKg1DUCBFC_8eU9I9p3gyCDheofPr_zNnCbSf9m1z-f1QICsbXwK0FlqhBuiXap4BxIPlC7YvOh8jU9IZmEEX6DPM2bIidH5QI8rzd8UuCk5CkE',
+    name: 'Kerry',
+    specialty: 'Dental Hygienist',
+    description: 'Gentle preventive care and patient education for long-term health.',
+    background: 'Dental Hygienist',
+    image: 'https://www.drjhume.com/images/kerry_fixed.jpg',
   },
   {
     id: 5,
-    name: 'Dr. Sarah Johnson',
-    specialty: 'Prosthodontist',
-    description: 'Specializes in dental prosthetics and full mouth rehabilitation.',
-    practicingSince: '2013',
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDqjN3e81T-oF2fFfNg67yP12OV5Nw4tJgCIr4G_2ihmskDgi-LYxL_1ia9s2QiUF36fzVTQKFo7hKycFCLXhA9tiy5yKexAKMFzblbxK7tVT7i1aF90wEXugTMHEFAXFD56N_xXRloHkIA5kz-c5_OpKGDcHcip6JQo-7npMOO9k7wEn_r9Vq8oCCqfzQyc3GtgwtgntL9bZaqHqIkKq_JpXcOwgD4u1z2xmqpsBEnl_uGAQam_X66Tw8KLpLc_OeuJGoctxWHqwc',
+    name: 'Nicole',
+    specialty: 'Dental Hygienist (Adjunct)',
+    description: 'Supportive, prevention‑focused care for a healthy smile.',
+    background: 'Adjunct Hygienist',
+    image: 'https://www.drjhume.com/images/kerry.jpg',
   },
 ]
 
@@ -230,7 +230,7 @@ function Dentists() {
                   <div className="h-[70%] bg-blue-100 dark:bg-slate-700 relative overflow-hidden">
                     <img 
                       alt={specialist.name} 
-                      className="w-full h-full object-cover object-top card-image group-hover:scale-105" 
+                      className={`w-full h-full object-cover object-top card-image group-hover:scale-105 ${specialist.name === 'Kerry' ? 'rotate-180' : ''}`} 
                       src={specialist.image}
                     />
                   </div>
@@ -242,7 +242,7 @@ function Dentists() {
                       <p className="text-xs text-blue-200 mt-1 leading-snug">{specialist.description}</p>
                     </div>
                     <div className="text-[10px] text-blue-300/80 mt-2 pt-2 border-t border-blue-400/30">
-                      Practicing since {specialist.practicingSince}
+                      {specialist.background}
                     </div>
                   </div>
                 </div>

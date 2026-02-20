@@ -9,7 +9,7 @@ export function Timeline({ data, title, subtitle }) {
   useEffect(() => {
     if (ref.current) {
       const rect = ref.current.getBoundingClientRect()
-      setHeight(rect.height)
+      setHeight(Math.max(0, rect.height - 48))
     }
   }, [ref])
 

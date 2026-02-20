@@ -1,77 +1,61 @@
-import { useState, useRef } from 'react'
+﻿import { useState, useRef } from 'react'
 import { ArrowLeft, ArrowRight } from 'lucide-react'
 
 const testimonials = [
   {
     id: 1,
-    name: 'Christina',
-    title: "Christina's smile, transformed",
-    description: "Christina felt self-conscious about the gaps and uneven shape of her teeth. She wanted a natural, brighter smile that still felt like her own – just more balanced, natural, and confidently beautiful.",
+    name: 'Smile Gallery',
+    title: 'Before & After: Cosmetic Dentistry',
+    description: 'Subtle changes can make a big difference in confidence and comfort.',
     treatments: [
-      'Smile design planning with digital preview',
-      'Minimal tooth preparation to preserve enamel',
-      'Placement of ultra-thin porcelain veneers',
+      'Comprehensive evaluation',
+      'Conservative cosmetic planning',
+      'Natural-looking restoration',
     ],
-    category: 'Aesthetic dentistry',
+    category: 'Cosmetic dentistry',
     beforeImage: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAHDifDdxHbr8wpn8ISzxI2Z2YDPwg9zX7uma4WRE6wD-yvpwWkVUaKdAjzCmLpw3fr_z1JlFjqQVl2dMsGjXwdzGPyDxLXnTyx_QPKKmYjTTm-9k3o6PfuXguNDT2k-zm-AqKak1_R04S0AnRJrwgKRYZA0MpQ59zhcfZaMpNqunldBK1YwMamMsonm8gfXfeqN65RewEFMNJEBv8Og222XTPngyIpmPGZblUVVTdc22tn2eOYnNYU_NreadcXV4yz7tDO0ufAMEA',
     afterImage: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAZtzwed_gJLFJUSbA97eb9xKKA-aq7ooGEGAn0UbHHuUf51ZhI0_sQgcCv9H0I_HCtvk2rLNbtAnKlLH4-z6_Ol2jArZ5V-9L4FTAl86QzLBfHkAl-icf-UPA55k-6l-AFuTpdkxQ7D0WP8uoHb-eZiQ96QBb_9hvuVqa_FLnTWxERDgbYmv7qALXQ6XXOqj9KQ_X3YiOx-b4csqtXVnWPd4hMdJBU0empgFHequjPEfEU2LnL36pmCanPWp41IwLpAgP0zaZNeU8',
     patientImage: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCi5hLXz85VZeJMtse7jrKq8pyN61Dg4bI_Qrmo-et6nhD_c9pfqFxjwPv1GZO2nilFk_C8LQ6IK_P5RApr86TuG6_p7Xl4TMdNmIy8DkL9-CrS4vLXftESDN-RHkQuWmuX1kngYY7Hwo7vJncUf7RSaaPkSBunbqmmrR12sNsTAqpbdvirQXqweO2QpdzRlp6QI7rnviy7w7jv-JKcWGbbSMuoyamoc7zVbFb85X6HpPyAgB7WGtwXGmDyA7WT-iE0uYdASaYkmKQ',
-    caption: "Christina's smile, before and after – confident, complete, and truly hers.",
+    caption: 'Before and after results shown with patient consent.',
   },
   {
     id: 2,
-    name: 'Michael',
-    title: "Michael's alignment journey",
-    description: "Michael wanted to straighten his teeth discreetly without the look of traditional braces. He chose clear aligners for a comfortable, nearly invisible treatment experience.",
+    name: 'Smile Gallery',
+    title: 'Before & After: Crowns & Bridges',
+    description: 'Restoring strength and function while keeping a natural look.',
     treatments: [
-      'Digital scanning and 3D treatment planning',
-      'Custom clear aligner fabrication',
-      'Progressive alignment over 12 months',
+      'Digital evaluation',
+      'Custom crown or bridge planning',
+      'Precise fit and finish',
     ],
-    category: 'Orthodontics',
+    category: 'Crowns & bridges',
     beforeImage: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAHDifDdxHbr8wpn8ISzxI2Z2YDPwg9zX7uma4WRE6wD-yvpwWkVUaKdAjzCmLpw3fr_z1JlFjqQVl2dMsGjXwdzGPyDxLXnTyx_QPKKmYjTTm-9k3o6PfuXguNDT2k-zm-AqKak1_R04S0AnRJrwgKRYZA0MpQ59zhcfZaMpNqunldBK1YwMamMsonm8gfXfeqN65RewEFMNJEBv8Og222XTPngyIpmPGZblUVVTdc22tn2eOYnNYU_NreadcXV4yz7tDO0ufAMEA',
     afterImage: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAZtzwed_gJLFJUSbA97eb9xKKA-aq7ooGEGAn0UbHHuUf51ZhI0_sQgcCv9H0I_HCtvk2rLNbtAnKlLH4-z6_Ol2jArZ5V-9L4FTAl86QzLBfHkAl-icf-UPA55k-6l-AFuTpdkxQ7D0WP8uoHb-eZiQ96QBb_9hvuVqa_FLnTWxERDgbYmv7qALXQ6XXOqj9KQ_X3YiOx-b4csqtXVnWPd4hMdJBU0empgFHequjPEfEU2LnL36pmCanPWp41IwLpAgP0zaZNeU8',
     patientImage: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCi5hLXz85VZeJMtse7jrKq8pyN61Dg4bI_Qrmo-et6nhD_c9pfqFxjwPv1GZO2nilFk_C8LQ6IK_P5RApr86TuG6_p7Xl4TMdNmIy8DkL9-CrS4vLXftESDN-RHkQuWmuX1kngYY7Hwo7vJncUf7RSaaPkSBunbqmmrR12sNsTAqpbdvirQXqweO2QpdzRlp6QI7rnviy7w7jv-JKcWGbbSMuoyamoc7zVbFb85X6HpPyAgB7WGtwXGmDyA7WT-iE0uYdASaYkmKQ',
-    caption: "Michael's perfectly aligned smile – achieved discreetly and comfortably.",
+    caption: 'Before and after results shown with patient consent.',
   },
   {
     id: 3,
-    name: 'Sarah',
-    title: "Sarah's implant success",
-    description: "Sarah lost a tooth and wanted a permanent solution that looked and felt natural. Dental implants provided the perfect restoration for her confident smile.",
+    name: 'Smile Gallery',
+    title: 'Before & After: Teeth Whitening',
+    description: 'Professional whitening for a brighter, natural smile.',
     treatments: [
-      '3D-guided implant placement surgery',
-      'Custom crown matching adjacent teeth',
-      'Full restoration in a single visit',
+      'In-office whitening',
+      'Shade matching',
+      'Maintenance guidance',
     ],
-    category: 'Implantology',
+    category: 'Teeth whitening',
     beforeImage: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAHDifDdxHbr8wpn8ISzxI2Z2YDPwg9zX7uma4WRE6wD-yvpwWkVUaKdAjzCmLpw3fr_z1JlFjqQVl2dMsGjXwdzGPyDxLXnTyx_QPKKmYjTTm-9k3o6PfuXguNDT2k-zm-AqKak1_R04S0AnRJrwgKRYZA0MpQ59zhcfZaMpNqunldBK1YwMamMsonm8gfXfeqN65RewEFMNJEBv8Og222XTPngyIpmPGZblUVVTdc22tn2eOYnNYU_NreadcXV4yz7tDO0ufAMEA',
     afterImage: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAZtzwed_gJLFJUSbA97eb9xKKA-aq7ooGEGAn0UbHHuUf51ZhI0_sQgcCv9H0I_HCtvk2rLNbtAnKlLH4-z6_Ol2jArZ5V-9L4FTAl86QzLBfHkAl-icf-UPA55k-6l-AFuTpdkxQ7D0WP8uoHb-eZiQ96QBb_9hvuVqa_FLnTWxERDgbYmv7qALXQ6XXOqj9KQ_X3YiOx-b4csqtXVnWPd4hMdJBU0empgFHequjPEfEU2LnL36pmCanPWp41IwLpAgP0zaZNeU8',
     patientImage: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCi5hLXz85VZeJMtse7jrKq8pyN61Dg4bI_Qrmo-et6nhD_c9pfqFxjwPv1GZO2nilFk_C8LQ6IK_P5RApr86TuG6_p7Xl4TMdNmIy8DkL9-CrS4vLXftESDN-RHkQuWmuX1kngYY7Hwo7vJncUf7RSaaPkSBunbqmmrR12sNsTAqpbdvirQXqweO2QpdzRlp6QI7rnviy7w7jv-JKcWGbbSMuoyamoc7zVbFb85X6HpPyAgB7WGtwXGmDyA7WT-iE0uYdASaYkmKQ',
-    caption: "Sarah's restored smile – natural, permanent, and beautifully confident.",
-  },
-  {
-    id: 4,
-    name: 'David',
-    title: "David's bright transformation",
-    description: "David's teeth had become stained over the years from coffee and tea. Professional whitening gave him a dramatically brighter smile in just one visit.",
-    treatments: [
-      'Professional cleaning and assessment',
-      'In-office laser whitening treatment',
-      'Take-home maintenance kit provided',
-    ],
-    category: 'Whitening',
-    beforeImage: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAHDifDdxHbr8wpn8ISzxI2Z2YDPwg9zX7uma4WRE6wD-yvpwWkVUaKdAjzCmLpw3fr_z1JlFjqQVl2dMsGjXwdzGPyDxLXnTyx_QPKKmYjTTm-9k3o6PfuXguNDT2k-zm-AqKak1_R04S0AnRJrwgKRYZA0MpQ59zhcfZaMpNqunldBK1YwMamMsonm8gfXfeqN65RewEFMNJEBv8Og222XTPngyIpmPGZblUVVTdc22tn2eOYnNYU_NreadcXV4yz7tDO0ufAMEA',
-    afterImage: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAZtzwed_gJLFJUSbA97eb9xKKA-aq7ooGEGAn0UbHHuUf51ZhI0_sQgcCv9H0I_HCtvk2rLNbtAnKlLH4-z6_Ol2jArZ5V-9L4FTAl86QzLBfHkAl-icf-UPA55k-6l-AFuTpdkxQ7D0WP8uoHb-eZiQ96QBb_9hvuVqa_FLnTWxERDgbYmv7qALXQ6XXOqj9KQ_X3YiOx-b4csqtXVnWPd4hMdJBU0empgFHequjPEfEU2LnL36pmCanPWp41IwLpAgP0zaZNeU8',
-    patientImage: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCi5hLXz85VZeJMtse7jrKq8pyN61Dg4bI_Qrmo-et6nhD_c9pfqFxjwPv1GZO2nilFk_C8LQ6IK_P5RApr86TuG6_p7Xl4TMdNmIy8DkL9-CrS4vLXftESDN-RHkQuWmuX1kngYY7Hwo7vJncUf7RSaaPkSBunbqmmrR12sNsTAqpbdvirQXqweO2QpdzRlp6QI7rnviy7w7jv-JKcWGbbSMuoyamoc7zVbFb85X6HpPyAgB7WGtwXGmDyA7WT-iE0uYdASaYkmKQ',
-    caption: "David's radiant smile – several shades brighter in a single visit.",
+    caption: 'Before and after results shown with patient consent.',
   },
 ]
 
-const categories = ['Aesthetic dentistry', 'Orthodontics', 'Implantology', 'Whitening']
+const categories = ['Cosmetic dentistry', 'Crowns & bridges', 'Teeth whitening']
 
 function TestimonialsSection() {
-  const [activeCategory, setActiveCategory] = useState('Aesthetic dentistry')
+  const [activeCategory, setActiveCategory] = useState('Cosmetic dentistry')
   const [currentIndex, setCurrentIndex] = useState(0)
   const [sliderPosition, setSliderPosition] = useState(50)
   const sliderRef = useRef(null)
@@ -122,13 +106,13 @@ function TestimonialsSection() {
         {/* Header */}
         <header className="pt-16 pb-8 px-6 md:px-12 text-center">
           <h3 className="text-sm font-semibold tracking-widest text-blue-500 dark:text-blue-400 uppercase mb-4">
-            Testimonials
+            Smile Gallery
           </h3>
           <h1 className="text-4xl md:text-6xl font-serif font-bold text-[#0B3B8B] dark:text-blue-100 mb-6">
-            Real stories. Real smiles.
+            Before and after results
           </h1>
           <p className="max-w-2xl mx-auto text-slate-500 dark:text-slate-400 text-lg leading-relaxed">
-            Nothing speaks louder than the words of those who've experienced true, visible transformation firsthand.
+            A few examples of conservative, natural-looking care.
           </p>
         </header>
 
@@ -235,7 +219,7 @@ function TestimonialsSection() {
           <div className="lg:col-span-4 flex flex-col justify-between h-full">
             <div className="w-full aspect-[4/3] rounded-2xl overflow-hidden shadow-md mb-6">
               <img
-                alt={`${currentTestimonial?.name} smiling confidently`}
+                alt="Smile gallery detail"
                 className="w-full h-full object-cover"
                 src={currentTestimonial?.patientImage}
               />

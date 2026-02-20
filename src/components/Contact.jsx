@@ -39,7 +39,7 @@ function Contact() {
                   </div>
                   <div>
                     <p className="font-bold text-gray-900 text-sm">Hume Dental Associates</p>
-                    <p className="text-xs text-gray-500 mt-1">123 Smile Boulevard, Suite 100<br/>San Francisco, CA 94102</p>
+                    <p className="text-xs text-gray-500 mt-1">914 North Main<br/>Bloomington, IL 61701</p>
                     <a className="text-accent-teal text-xs font-bold mt-2 inline-flex items-center hover:underline" href="#">
                       Get Directions <span className="material-symbols-outlined text-[14px] ml-1">arrow_forward</span>
                     </a>
@@ -56,7 +56,7 @@ function Contact() {
                 </div>
                 <div>
                   <p className="text-sm font-medium text-gray-500 mb-1">Phone</p>
-                  <a className="text-lg font-bold text-gray-900 hover:text-accent-teal transition-colors" href="tel:4155550123">(415) 555-0123</a>
+                  <a className="text-lg font-bold text-gray-900 hover:text-accent-teal transition-colors" href="tel:3098281395">(309) 828-1395</a>
                   <p className="text-xs text-gray-400 mt-1">Call for appointments</p>
                 </div>
               </div>
@@ -66,8 +66,8 @@ function Contact() {
                 </div>
                 <div>
                   <p className="text-sm font-medium text-gray-500 mb-1">Hours</p>
-                  <p className="text-base font-bold text-gray-900">Mon - Fri: 8am - 6pm</p>
-                  <p className="text-sm text-gray-500">Sat: 9am - 2pm</p>
+                  <p className="text-base font-bold text-gray-900">Mon - Thu: 8am - 5pm</p>
+                  <p className="text-sm text-gray-500">Fri: 8am - 4pm • Sat: Closed</p>
                 </div>
               </div>
             </div>

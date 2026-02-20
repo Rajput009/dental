@@ -75,6 +75,12 @@ html {
   scroll-behavior: smooth;
 }
 
+html,
+body,
+#root {
+  overflow-x: hidden;
+}
+
 /* Masonry grid for reviews */
 .masonry-grid {
   column-count: 1;

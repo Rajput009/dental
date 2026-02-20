@@ -114,12 +114,36 @@ function Contact() {
                 ></textarea>
               </label>
               <div className="pt-2">
-                <button
-                  type="submit"
-                  className="group w-full md:w-auto md:min-w-[200px] h-14 bg-accent-teal hover:bg-accent-teal-hover transition-all rounded-full flex items-center justify-center gap-2 px-8 shadow-lg shadow-accent-teal/20 transform hover:-translate-y-0.5"
-                >
-                  <span className="text-white font-bold text-base">Send Message</span>
-                  <span className="material-symbols-outlined text-white group-hover:translate-x-1 transition-transform">send</span>
+                <button type="submit" className="btn-animated group md:w-auto md:min-w-[200px]">
+                  <span className="btn-text">Send Message</span>
+                  <div className="btn-icon">
+                    <svg
+                      className="absolute h-5 w-5 -translate-x-1/2 transition-all duration-500 ease-in-out group-hover:translate-x-10"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      aria-hidden="true"
+                    >
+                      <path d="M7 17L17 7" />
+                      <path d="M7 7h10v10" />
+                    </svg>
+                    <svg
+                      className="absolute h-5 w-5 -translate-x-10 transition-all duration-500 ease-in-out group-hover:-translate-x-1/2"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      aria-hidden="true"
+                    >
+                      <path d="M7 17L17 7" />
+                      <path d="M7 7h10v10" />
+                    </svg>
+                  </div>
                 </button>
               </div>
               <p className="text-xs text-gray-400 text-center md:text-left mt-2">

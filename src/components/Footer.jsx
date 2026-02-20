@@ -19,10 +19,18 @@ function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <div className="bg-teal-500 rounded-full p-1">
-                <span className="material-symbols-outlined text-white text-sm">dentistry</span>
+              <div className="w-8 h-8 text-primary flex items-center justify-center">
+                <span
+                  className="material-symbols-outlined text-3xl"
+                  style={{ fontVariationSettings: "'FILL' 1" }}
+                >
+                  dentistry
+                </span>
               </div>
-              <span className="font-semibold text-lg tracking-wide">Hume Dental</span>
+              <div className="flex flex-col leading-none">
+                <span className="font-display font-bold text-white text-lg tracking-tight">Hume</span>
+                <span className="font-display font-medium text-accent-teal text-sm tracking-wide">Dental</span>
+              </div>
             </div>
             <p className="text-gray-400 text-sm leading-relaxed">
               Your dream smile is our favorite care. Expert dental services for the whole family.

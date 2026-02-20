@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { ArrowUpRight } from 'lucide-react'
 
 const services = [
   { id: 'cleaning', name: 'General Cleaning', description: 'Routine check-up and cleaning.', duration: '60 mins', icon: 'cleaning_services' },
@@ -159,12 +160,12 @@ function Booking() {
               </div>
 
               {/* Submit Button */}
-              <button
-                type="submit"
-                className="w-full bg-accent-teal hover:bg-accent-teal-hover text-white text-lg font-medium px-8 py-4 rounded-full transition-colors flex items-center justify-center gap-2 shadow-lg shadow-teal-900/10"
-              >
-                Confirm Booking
-                <span className="material-symbols-outlined text-[20px]">arrow_forward</span>
+              <button type="submit" className="btn-animated group w-full justify-center">
+                <span className="btn-text">Confirm Booking</span>
+                <div className="btn-icon">
+                  <ArrowUpRight className="absolute h-5 w-5 -translate-x-1/2 transition-all duration-500 ease-in-out group-hover:translate-x-10" />
+                  <ArrowUpRight className="absolute h-5 w-5 -translate-x-10 transition-all duration-500 ease-in-out group-hover:-translate-x-1/2" />
+                </div>
               </button>
             </form>
           </div>

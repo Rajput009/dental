@@ -33,6 +33,7 @@ function Services() {
       image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBGtGwwBYA3-a0m28KLsN4mj6TJYu5nZ_KkaHYO6_MNOtPI9gH0sGgUiN2IjNtnSdCBwbQ_OaSZg9YpcvLb_2lNPwkPvdGTEMsLaFfnGMVdqALlrVFewrE5WihKW5F342rbPGhdLBez9gvpLxavrgOy9cRNpxMzjgqRqnFKaGT2Yql7Qg2KJFsOBYqrDVoUXN_i-7soJvCRc46AQrC0i-cLI6GvqBitX8QxiKqczSFZZe6VkxXdNQ7oRIObgXSX2DIC_eQ4syYUA3k',
       clipPath: 'inset(5% round 50% 50% 10% 10%)',
       delay: '2s',
+      expandScale: 'scale-[1.10]',
     },
     {
       id: 4,
@@ -42,6 +43,7 @@ function Services() {
       image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDRf7pwfflaHVBrIO4k90Vbs7LBD9zXKY5lCjQ2ogCvI0TE3AdAUBoy8pIAI31WuqG4kZe4CJqwmH52nQUUjaHhXTu0ZQasHDsJ6qmqEeODBbajjdoLfxERQa-fDtAMLUbcgGv5cXJy3aPtWILHlS0gPjRqh99_Vd-xzQ0ulSyCPT-6CPUPSjI8Lpataj5nEoRayMFejVlGn-MdMdAilao-_X2BAAkmX2Xd3GrUhZR7AFfeEA8jmrsnkJGiby1QRFEbk_u7VolpCH8',
       clipPath: 'ellipse(45% 35% at 50% 50%)',
       delay: '1.5s',
+      expandScale: 'scale-[1.08]',
     },
     {
       id: 5,
@@ -51,6 +53,7 @@ function Services() {
       image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuB3uCL6fD09ADLPGCh9gLFE3u2WgKOfKRu2_ryuUNRdnZCJWurxjTPYGTekoYZOUh4NCcujTvtEPl-o3Gzic8zog3djekXHa5rLSMzVo-tVzwdtmcTGcilb1K4kK15fs1LOhDL3eKE9-AyEnLOGM2ci7W5zFPziTRH3hvAPbjNWUJ0DTT-ayFFO3jAfQDEqnlYxAgEPUCuCqgfsvVa_MiVG0FsR08_2R56us7M-snIN5JpCXelrnztab2jGWbVn81E1Jb4hc9J0UsM',
       clipPath: 'polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%)',
       delay: '0.5s',
+      expandScale: 'scale-[1.0]',
     },
   ]
 
@@ -108,20 +111,25 @@ function Services() {
                 {/* Active Background Overlay */}
                 <div className={`absolute inset-0 bg-gradient-to-br from-blue-600 via-blue-700 to-blue-900 transition-opacity duration-500 ${isActive ? 'opacity-100' : 'opacity-0'}`}></div>
 
-                {/* Image - Collapsed */}
-                {!isActive && (
-                  <div className="absolute top-[40%] left-1/2 -translate-x-1/2 -translate-y-1/2 transition-all duration-700 ease-[cubic-bezier(0.34,1.56,0.64,1)] z-10">
-                    <div className="relative">
-                      <img
-                        alt={`${service.title} 3D model representation`}
-                        className="w-40 h-40 lg:w-52 lg:h-52 object-cover"
-                        src={service.image}
-                        style={{ clipPath: service.clipPath }}
-                      />
-                      <div className="absolute inset-0 w-40 h-40 lg:w-52 lg:h-52 bg-blue-500 rounded-full mix-blend-color opacity-30 blur-xl -z-10"></div>
-                    </div>
+                {/* Image - Expand in place */}
+                <div
+                  className={`
+                    absolute z-10 transition-all duration-700 ease-[cubic-bezier(0.34,1.56,0.64,1)]
+                    ${isActive
+                      ? `top-1/2 left-10 -translate-y-1/2 translate-x-0 ${service.expandScale || 'scale-[1.25]'}`
+                      : 'top-[40%] left-1/2 -translate-x-1/2 -translate-y-1/2 scale-100'}
+                  `}
+                >
+                  <div className="relative">
+                    <img
+                      alt={`${service.title} 3D model representation`}
+                      className="w-40 h-40 lg:w-52 lg:h-52 object-cover"
+                      src={service.image}
+                      style={{ clipPath: service.clipPath }}
+                    />
+                    <div className="absolute inset-0 w-40 h-40 lg:w-52 lg:h-52 bg-blue-500 rounded-full mix-blend-color opacity-30 blur-xl -z-10"></div>
                   </div>
-                )}
+                </div>
 
                 {/* Collapsed Title - Bottom Centered */}
                 <div 
@@ -144,17 +152,9 @@ function Services() {
                     ${isActive ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8 pointer-events-none'}
                   `}
                 >
-                  <div className="h-full w-full flex flex-col lg:flex-row gap-6">
-                    <div className="flex-1 relative flex items-center justify-center">
-                      <div className="absolute w-40 h-40 lg:w-64 lg:h-64 bg-cyan-400 rounded-full mix-blend-screen opacity-40 blur-3xl"></div>
-                      <img
-                        alt={`${service.title} 3D model representation`}
-                        className="w-48 h-48 lg:w-72 lg:h-72 object-contain drop-shadow-[0_0_25px_rgba(56,189,248,0.6)]"
-                        src={service.image}
-                        style={{ clipPath: service.clipPath }}
-                      />
-                    </div>
-                    <div className="flex-1 bg-white/10 backdrop-blur-md rounded-2xl p-5 flex flex-col justify-between text-white/90">
+                  <div className="h-full w-full flex items-center gap-6">
+                    <div className="flex-1" />
+                    <div className="flex-1 bg-white/10 backdrop-blur-md rounded-2xl p-5 flex flex-col justify-between text-white/90 border border-white/15">
                       <div className="flex items-start justify-between gap-3">
                         <h4 className="text-lg lg:text-xl font-serif font-medium leading-tight">
                           {service.detailTitle}

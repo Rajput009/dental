@@ -14,6 +14,11 @@ export const useMouseVector = (containerRef) => {
         const rect = containerRef.current.getBoundingClientRect()
         newX = x - rect.left
         newY = y - rect.top
+        const padding = 60
+        const maxX = Math.max(0, rect.width - padding)
+        const maxY = Math.max(0, rect.height - padding)
+        newX = Math.max(padding, Math.min(maxX, newX))
+        newY = Math.max(padding, Math.min(maxY, newY))
       } else {
         newX = x
         newY = y

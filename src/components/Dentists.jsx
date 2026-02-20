@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { ArrowRight, ArrowLeft } from 'lucide-react'
 
 const specialists = [
@@ -52,6 +52,7 @@ const staffImages = [
 
 function Dentists() {
   const [currentIndex, setCurrentIndex] = useState(0)
+  const [isMobile, setIsMobile] = useState(false)
   const visibleCards = 3
   const maxIndex = specialists.length - visibleCards
 
@@ -62,6 +63,13 @@ function Dentists() {
   const handleNext = () => {
     setCurrentIndex(prev => Math.min(maxIndex, prev + 1))
   }
+
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth < 768)
+    check()
+    window.addEventListener('resize', check)
+    return () => window.removeEventListener('resize', check)
+  }, [])
 
   return (
     <section id="dentists" className="relative min-h-screen overflow-hidden">
@@ -201,14 +209,17 @@ function Dentists() {
           </div>
 
           {/* Right Panel - Specialist Cards */}
-          <div className="w-full md:w-6/12 lg:w-7/12 bg-gray-50 dark:bg-slate-800/50 p-8 lg:p-12 overflow-x-auto relative">
+          <div className="w-full md:w-6/12 lg:w-7/12 bg-gray-50 dark:bg-slate-800/50 p-8 lg:p-12 overflow-x-auto md:overflow-x-hidden relative">
             <span className="absolute top-8 right-12 text-xs font-bold text-gray-400 uppercase tracking-widest hidden md:block">Specialists</span>
             
-            <div className="flex gap-6 min-w-max mt-8 cards-track" style={{ transform: `translateX(-${currentIndex * 280}px)` }}>
+            <div
+              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8 w-full"
+              style={{ transform: isMobile ? 'none' : `translateX(-${currentIndex * 280}px)` }}
+            >
               {specialists.map((specialist) => (
                 <div 
                   key={specialist.id}
-                  className="w-64 h-[420px] rounded-xl overflow-hidden relative group shadow-lg flex flex-col bg-white dark:bg-slate-800 flex-shrink-0"
+                  className="w-full h-[420px] rounded-xl overflow-hidden relative group shadow-lg flex flex-col bg-white dark:bg-slate-800"
                 >
                   {/* Specialty Badge */}
                   <div className="absolute top-4 left-4 z-10 bg-white/90 dark:bg-slate-900/90 backdrop-blur px-2 py-1 rounded text-[10px] font-semibold text-[#1E3A8A] dark:text-blue-300 uppercase tracking-wide">

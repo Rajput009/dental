@@ -42,7 +42,7 @@ function Hero() {
       className="relative pt-16 pb-24 px-6 md:px-12 max-w-7xl mx-auto flex flex-col items-center text-center overflow-hidden"
     >
       {/* Image Trail */}
-      <div className="absolute inset-0 pointer-events-none z-0 opacity-80">
+      <div className="absolute inset-0 pointer-events-none z-0 opacity-80 hidden md:block">
         <ImageTrail containerRef={trailRef} interval={120} rotationRange={10}>
           {trailImages.map((url, index) => (
             <div
@@ -60,7 +60,7 @@ function Hero() {
       </div>
 
       {/* Decorative SVG Background */}
-      <svg className="absolute top-10 left-0 w-full h-full text-gray-900 opacity-10 pointer-events-none z-0" fill="none" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+      <svg className="absolute top-10 left-0 w-full h-full max-w-full overflow-hidden text-gray-900 opacity-10 pointer-events-none z-0" fill="none" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
         <path d="M-100 100 C 100 100, 200 0, 400 200 C 600 400, 700 300, 900 300" fill="none" stroke="currentColor" strokeWidth="1"></path>
         <path d="M-100 150 C 100 150, 200 50, 400 250 C 600 450, 700 350, 900 350" fill="none" stroke="currentColor" strokeWidth="1"></path>
       </svg>

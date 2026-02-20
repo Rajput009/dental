@@ -12,6 +12,8 @@ import Footer from './components/Footer'
 function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
+
+
   return (
     <div className="bg-white text-gray-900 overflow-x-hidden">
       <Navbar mobileMenuOpen={mobileMenuOpen} setMobileMenuOpen={setMobileMenuOpen} />

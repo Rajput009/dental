@@ -86,9 +86,9 @@ function Booking() {
                 <span className="material-symbols-outlined text-accent-teal">stethoscope</span>
                 Preferred Dentist
               </h3>
-              <div className="flex gap-4 overflow-x-auto pb-2 no-scrollbar">
+              <div className="grid grid-cols-2 sm:flex sm:gap-4 sm:overflow-x-auto pb-2 no-scrollbar">
                 {dentists.map((dentist) => (
-                  <label key={dentist.id} className="cursor-pointer min-w-[140px]">
+                  <label key={dentist.id} className="cursor-pointer min-w-0">
                     <input
                       type="radio"
                       name="dentist"

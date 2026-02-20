@@ -87,7 +87,7 @@ function Services() {
         </div>
 
         {/* Expanding Cards Container */}
-        <div className="flex flex-col lg:flex-row gap-4 h-[360px] lg:h-80 w-full max-w-7xl mx-auto items-stretch">
+        <div className="grid grid-cols-1 gap-6 w-full max-w-7xl mx-auto md:flex md:gap-4 md:h-80 md:items-stretch">
           {services.map((service) => {
             const isActive = activeId === service.id
             
@@ -101,20 +101,32 @@ function Services() {
                   transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)]
                   ${isActive ? 'lg:flex-[3]' : 'lg:flex-[1]'}
                   flex-1
-                  bg-blue-600 shadow-xl border border-white/10
+                  bg-blue-600 md:bg-blue-600 shadow-xl border border-white/10
                   group
+                  aspect-square md:aspect-auto
                 `}
               >
                 {/* Background Gradient */}
                 <div className="absolute inset-0 bg-gradient-to-b from-blue-400/30 to-blue-900/80 pointer-events-none"></div>
                 
-                {/* Active Background Overlay */}
-                <div className={`absolute inset-0 bg-gradient-to-br from-blue-600 via-blue-700 to-blue-900 transition-opacity duration-500 ${isActive ? 'opacity-100' : 'opacity-0'}`}></div>
+                {/* Active Background Overlay (desktop only) */}
+                <div className={`hidden md:block absolute inset-0 bg-gradient-to-br from-blue-600 via-blue-700 to-blue-900 transition-opacity duration-500 ${isActive ? 'opacity-100' : 'opacity-0'}`}></div>
 
-                {/* Image - Expand in place */}
+                {/* Mobile simple layout */}
+                <div className="md:hidden relative z-10 p-6 flex flex-col items-center text-center gap-4 h-full justify-center">
+                  <img
+                    alt={`${service.title} 3D model representation`}
+                    className="w-48 h-48 object-cover"
+                    src={service.image}
+                    style={{ clipPath: service.clipPath }}
+                  />
+                  <h3 className="font-serif text-white text-xl leading-tight">{service.title}</h3>
+                </div>
+
+                {/* Image - Expand in place (desktop) */}
                 <div
                   className={`
-                    absolute z-10 transition-all duration-700 ease-[cubic-bezier(0.34,1.56,0.64,1)]
+                    hidden md:block absolute z-10 transition-all duration-700 ease-[cubic-bezier(0.34,1.56,0.64,1)]
                     ${isActive
                       ? `top-1/2 left-10 -translate-y-1/2 translate-x-0 ${service.expandScale || 'scale-[1.25]'}`
                       : 'top-[40%] left-1/2 -translate-x-1/2 -translate-y-1/2 scale-100'}
@@ -131,10 +143,10 @@ function Services() {
                   </div>
                 </div>
 
-                {/* Collapsed Title - Bottom Centered */}
+                {/* Collapsed Title - Bottom Centered (desktop) */}
                 <div 
                   className={`
-                    absolute bottom-8 left-0 w-full text-center px-4
+                    hidden md:block absolute bottom-8 left-0 w-full text-center px-4
                     transition-all duration-500 ease-out
                     ${isActive ? 'opacity-0 translate-y-4' : 'opacity-100 translate-y-0'}
                   `}
@@ -144,10 +156,10 @@ function Services() {
                   </h3>
                 </div>
 
-                {/* Expanded Content - Split Layout */}
+                {/* Expanded Content - Split Layout (desktop) */}
                 <div
                   className={`
-                    absolute inset-0 p-6 md:p-8
+                    hidden md:block absolute inset-0 p-6 md:p-8
                     transition-all duration-500 delay-100
                     ${isActive ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8 pointer-events-none'}
                   `}

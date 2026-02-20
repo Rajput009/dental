@@ -1,4 +1,6 @@
-import AnimatedButton from './ui/AnimatedButton'
+﻿import AnimatedButton from './ui/AnimatedButton'
+import { ImageTrail } from './ui/ImageTrail'
+import { useRef } from 'react'
 
 function Hero() {
   const featureCards = [
@@ -23,8 +25,40 @@ function Hero() {
     },
   ]
 
+  const trailRef = useRef(null)
+  const trailImages = [
+    'https://images.unsplash.com/photo-1524504388940-b1c1722653e1',
+    'https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e',
+    'https://images.unsplash.com/photo-1525134479668-1bee5c7c6845',
+    'https://images.unsplash.com/photo-1500648767791-00dcc994a43e',
+    'https://images.unsplash.com/photo-1544723795-3fb6469f5b39',
+    'https://images.unsplash.com/photo-1542206395-9feb3edaa68d',
+  ].map((url) => `${url}?auto=format&fit=crop&w=220&q=80`)
+
   return (
-    <section id="home" className="relative pt-16 pb-24 px-6 md:px-12 max-w-7xl mx-auto flex flex-col items-center text-center">
+    <section
+      id="home"
+      ref={trailRef}
+      className="relative pt-16 pb-24 px-6 md:px-12 max-w-7xl mx-auto flex flex-col items-center text-center overflow-hidden"
+    >
+      {/* Image Trail */}
+      <div className="absolute inset-0 pointer-events-none z-0 opacity-80">
+        <ImageTrail containerRef={trailRef} interval={120} rotationRange={10}>
+          {trailImages.map((url, index) => (
+            <div
+              key={index}
+              className="flex relative overflow-hidden w-24 h-24 rounded-2xl shadow-soft ring-1 ring-white/60"
+            >
+              <img
+                src={url}
+                alt={`Smiling person ${index + 1}`}
+                className="object-cover absolute inset-0"
+              />
+            </div>
+          ))}
+        </ImageTrail>
+      </div>
+
       {/* Decorative SVG Background */}
       <svg className="absolute top-10 left-0 w-full h-full text-gray-900 opacity-10 pointer-events-none z-0" fill="none" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
         <path d="M-100 100 C 100 100, 200 0, 400 200 C 600 400, 700 300, 900 300" fill="none" stroke="currentColor" strokeWidth="1"></path>
